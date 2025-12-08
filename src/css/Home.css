@@ -1,0 +1,125 @@
+.home {
+  padding: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #666666c0;
+  border-radius: 4px;
+  /* background-color: #333; */
+  color: #666666c0;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #d3151f;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+}
+
+.search-button:hover {
+  background-color: #f40612;
+}
+
+
+@media (max-width: 639px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .search-form {
+    margin-bottom: 1rem;
+  }
+}
+
+.movies-grid {
+  background-color: #040c4191;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  gap: 1.1rem;
+  padding: 2rem;
+  min-width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.movies-grid.not-found {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  
+  align-items: center;
+  
+}
+.movies-grid.not-found button {
+  width: fit-content;
+  padding: 1rem 3rem;
+}
+@media screen and (max-width: 550px){
+  .movies-grid {
+    /* background-color: green; */
+    grid-template-columns: repeat(1, minmax(350px, 1fr));
+    justify-items: center;
+    
+    
+  }
+}
+.btn-container {
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  /* background-color: black; */
+  border: 3px solid white;
+  
+  border-radius: 15px;
+  padding: 1rem 0;
+}
+.btn-gerne {
+  border: none;
+  /* background-color: rgb(51, 51, 51); */
+  background: none;
+  color: white;
+  outline: none;
+  border: none;
+  transition: all 0.15s ease-in;
+}
+.btn-gerne:hover {
+  background-color: white;
+  color: rgb(51, 51, 51);
+}
+.home h2 {
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 40px;
+}

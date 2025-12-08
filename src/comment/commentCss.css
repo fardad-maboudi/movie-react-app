@@ -1,0 +1,109 @@
+.comment {
+    /* background-color: rgb(1, 8, 53); */
+    background-color: #040c4191;
+    border-radius: 15px;
+    color: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 1rem 0;
+}
+.comment h1 {
+    font-size: 2.1rem;
+    padding: 1rem 0;
+    text-align: center;
+    
+    
+}
+
+.comment-sec { 
+   
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(17, 30, 95);
+    color: white;
+    
+    max-width: 700px;
+    border-radius: 1.5rem;
+    padding: 0.5rem 2rem;
+    
+    margin: 0 auto;
+    margin-top: 1rem;
+    
+}
+.comment-sec h5 {
+    align-self: flex-start;
+    background-color: rgb(39, 57, 149);
+    border-radius: 10px;
+    padding: 0 0.8rem;
+}
+.comment-sec p {
+    margin-left: 30px;
+    font-size: 22px;
+    padding: 0.9rem 0;
+
+}
+
+.comment-sec small {
+    align-self: flex-end;
+}
+
+.form-comment {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.form-comment input {
+    outline: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+.form-comment textarea {
+    font-size: 1rem;
+    background-color: white;
+    
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    
+    color: black;
+    
+}
+.input-user{
+    align-self: flex-start;
+}
+
+.user-btn {
+    align-self: flex-end;
+
+}
+
+.form-comment h1 {
+    font-size: 5rem;
+}
+.post-comment {
+    font-size: 0.7rem;
+    transition: all 0.15s ease-in-out;
+}
+.post-comment:hover {
+    /* background-color: rgb(100, 108, 255); */
+    background-color: rgb(17, 30, 95);
+    color: white;
+}
+.user-btn button {
+    background-color: rgb(199, 199, 199);
+    color: black;
+}
