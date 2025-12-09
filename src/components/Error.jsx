@@ -6,7 +6,7 @@ export default function Error () {
             <div className="error-page">
                 <h1>404</h1>
                 <p>page not found</p>
-                <Link to='/'>Back Home</Link>
+                <Link className="back-home" to='/'>Back Home</Link>
             </div>
             
         </>

@@ -11,7 +11,7 @@ function Favorites () {
             <>
             <NavBar home={"Home"}/>
             <div className="favorites">
-                <h2>favorites</h2>
+                <h2>Favorites</h2>
                 <div className="movies-grid">
                 {favorites.map(movie => 
                     <MovieCard key={movie.id} movie={movie}/> 
