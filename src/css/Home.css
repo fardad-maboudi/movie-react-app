@@ -2,23 +2,27 @@
   padding: 2rem 0;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
-
 .search-form {
   max-width: 600px;
   margin: 0 auto 2rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
   padding: 0 1rem;
   box-sizing: border-box;
   
 }
 
+
 .search-input {
   flex: 1;
   padding: 0.75rem 1rem;
+  background-color: white;
   border: 1px solid #666666c0;
   border-radius: 4px;
+  outline: none;
   /* background-color: #333; */
   color: #666666c0;
   font-size: 1rem;
@@ -26,7 +30,7 @@
 
 .search-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #666;
+  box-shadow: 0 0 0 2px #4f4e4e;
 }
 
 .search-button {
@@ -35,10 +39,22 @@
   color: white;
   border-radius: 4px;
   font-weight: 500;
+  text-align: center;
   transition: background-color 0.2s;
   white-space: nowrap;
   outline: none;
   border: none;
+}
+@media screen and (max-width: 550px) {
+  .search-form {
+    flex-direction: column;
+  }
+  .search-button {
+    width: 70%;
+    margin: 0 auto;
+    
+  }
+  
 }
 
 .search-button:hover {
@@ -61,9 +77,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
+  align-items: center;
+  
   gap: 1.1rem;
+  /* min-width: 300px; */
   padding: 2rem;
-  min-width: fit-content;
   margin: 0 auto;
   box-sizing: border-box;
   border-radius: 5px;
@@ -73,7 +91,6 @@
   display: flex;
   flex-direction: column;
   color: white;
-  
   align-items: center;
   
 }
@@ -84,12 +101,35 @@
 @media screen and (max-width: 550px){
   .movies-grid {
     /* background-color: green; */
-    grid-template-columns: repeat(1, minmax(350px, 1fr));
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
     justify-items: center;
-    
+    align-items: center;
+    justify-self: center;
+    padding: 1.4rem;
+    padding-left: 0;
+    padding-right: 0;
     
   }
+  
+  .movies-grid .movie-card {
+    margin-top: 1rem;
+    
+  }
+  .movie-card {
+    width: 80%;
+  }
+   .movie-info h3 {
+  font-size: 1rem;
+  
 }
+}
+/* @media screen and (max-width: 480px){
+  .movies-grid {
+    
+    grid-template-columns: repeat(1, minmax(350px, 1fr));
+    justify-items: center;
+  }
+} */
 .btn-container {
   max-width: 80vw;
   margin: 0 auto;

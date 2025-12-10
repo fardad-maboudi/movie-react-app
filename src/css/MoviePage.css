@@ -23,7 +23,7 @@
        
 }
 
-h1 {
+.header h1 {
     font-size: 4.8rem;
     flex: 1;
 }
@@ -70,6 +70,15 @@ h1 {
     margin-bottom: 3rem;
    
 }
+
+.overview::before {
+    content: "Story Synopsis: ";
+    background-color: #040c41be;
+    border-radius: 5px;
+    padding: 0.1rem;
+    margin-right: 0.2rem;
+    color: white;
+}
 .genre-con {
     display: flex;
     flex-direction: row;
@@ -113,6 +122,35 @@ h1 {
  @media screen and (max-width: 550px) {
     .movie-page {
         flex-direction: column;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .imdb-logo {
+        margin-top: 0.8rem;
+        align-self: flex-end;
+    }
+    .imdb-logo img {
+        
+        width: 60px;
+        height: 30px;
+    
+        border-radius: 15px;
+}
+    .header h1 {
+        font-size: 2rem;
+    }
+    .genre-con p, .genre-con span {
+    
+    width: fit-content;
+    font-size: 0.7rem;
+    padding: 0.3rem 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+   
+    }
+    .cast-crew {
+        margin-left: 0;
     }
     
  }

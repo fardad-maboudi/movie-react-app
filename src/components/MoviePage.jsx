@@ -159,7 +159,7 @@ function MoviePage () {
                         initial={animationNegativeHorizon}
                         animate={animationZeroHorizon}
                         transition={{duration: 0.5, ease: "easeOut", delay: 0.2}}
-                className="overview">{data.overview}</motion.p>
+                className="overview"> {data.overview}</motion.p>
             </div>
             
            

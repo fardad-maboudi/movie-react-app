@@ -1,5 +1,4 @@
 import MovieCard from '../components/MovieCard'
-
 import { useState, useEffect } from 'react'
 import { searchMovies, getPopularMovies, getGenraMovies } from '../services/api'
 import "../css/Home.css"
@@ -67,7 +66,6 @@ export default function Home () {
             const handleBtn = (e,id) =>{
             // console.log(allMovies);
             
-            
             const mm = allMovies.filter(movie => {
             return movie.genre_ids.includes(id)  
         })
@@ -116,7 +114,6 @@ export default function Home () {
                 {error}
             </div>} 
             
-
                  {loading ? (
             <div className="loading">Loading...</div>
             ) : movies.length < 1 ? (
@@ -141,9 +138,9 @@ export default function Home () {
                 className="movies-grid"
             >
                 {movies.map(movie => (
-                    
-                    
+                     
                 <MovieCard key={movie.id} movie={movie} />
+
                 ))}
             </motion.div>
             )}
