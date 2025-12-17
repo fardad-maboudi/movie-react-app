@@ -1,11 +1,10 @@
 import MovieCard from '../components/MovieCard'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import { searchMovies, getPopularMovies, getGenraMovies } from '../services/api'
 import "../css/Home.css"
 import { motion } from 'framer-motion'
 import NavBar from '../components/NavBar'
-import { p } from 'framer-motion/client'
-
+import { option, p } from 'framer-motion/client'
 
 
 export default function Home () {
@@ -16,6 +15,10 @@ export default function Home () {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
     const [genreBtn, setGenreBtn] = useState();
+
+    const [dropdownMovieGenras, setDropdownMovieGenras] = useState()
+
+    const [genreData, setGenreData] = useState()
 
     const [searchedMovie, setSearchedMovie] = useState("")
     const loadPopularMovies = async () => {
@@ -61,32 +64,81 @@ export default function Home () {
         
         const Gmovies = async () =>{
             const ggmovies = await getGenraMovies();
+            setGenreData(ggmovies)
+
             // console.log(ggmovies);
             
             const handleBtn = (e,id) =>{
             // console.log(allMovies);
             
             const mm = allMovies.filter(movie => {
-            return movie.genre_ids.includes(id)  
+            return movie.genre_ids.includes(id)
+
         })
         
         setMovies(mm)
+
+        console.log(mm);
+        
     }
+
             const moviesWithGenres = ggmovies.genres.map(movie => { 
                 return <button className='btn-gerne' onClick={(e)=> handleBtn(e,movie.id)} key={movie.id}>{movie.name}</button>
             })
             setGenreBtn(moviesWithGenres)
+            
         }
         Gmovies()
-        console.log(allMovies);
+        // console.log(allMovies);
         
     },[allMovies])
     function SearchMovie () {
         setSearchedMovie(searchQuery)
-        console.log(searchedMovie);
+        // console.log(searchedMovie);
         
     }
+
+    //     const ddmenu = allMovies.filter(movie => {
+        //         console.log(movie);
+                
+        //     return movie.genre_ids.includes(value)
+        // })
+    // const handleChange = (e) => {
+    //     console.log(genreData);
+        
+    //         const value = e.target.value;
+        
+
+    //     const ddmenu = genreData.genres.map (item => {
+    //         allMovies.filter(movie => {
+            
+                
+    //             return movie.genre_ids.includes(item?.id)
+    //         })
+    //     })
+    //         console.log(value);
+    //         setMovies(ddmenu)
+            
+            
+    //     } 
+    const handleChange = (e) => {
+    const value = e.target.value;
     
+    if (value === "all") {
+        setMovies(allMovies);
+        return;
+    }
+    
+    // Find the genre ID that matches the selected name
+    const selectedGenre = genreData.genres.find(genre => genre.name === value);
+    
+    if (selectedGenre) {
+        const filteredMovies = allMovies.filter(movie => {
+            return movie.genre_ids.includes(selectedGenre.id);
+        });
+        setMovies(filteredMovies);
+    }
+}
     return (
         <>
         <NavBar movie_app={"Movie App"} />
@@ -96,7 +148,18 @@ export default function Home () {
                         
                 {genreBtn}
             </div>
-            
+            <div className='dropdown-con'>
+                <select 
+                        className='dropdown'
+                        value={dropdownMovieGenras}
+                        onChange={handleChange}>
+                    
+                    <option value="all">All</option>
+                    {genreData?.genres?.map(movie =>{
+                        return <option key={movie.id} value={movie.name} >{movie.name}</option>
+                    })}
+                </select>
+            </div>
             <form onSubmit={handleSearch} className='search-form'>
                 <input 
                 value={searchQuery}
